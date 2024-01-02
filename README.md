@@ -19,7 +19,6 @@
 * [字符串编码](https://github.com/bw1032/gogo/gogogo/main/interview/string/code/main.go)
 * [中文字符串下标取值](https://github.com/bw1032/gogogo/blob/main/interview/string/subscript/main.go)
 * [翻转字符串"你abc好"](https://github.com/bw1032/gogogo/blob/main/interview/string/reverse/main.go)
-* [字符串转成byte数组，会发生内存拷贝吗？]
 
 ##### 反射
 * [reflect](https://github.com/bw1032/gogogo/blob/main/interview/main.go)
@@ -41,8 +40,8 @@
 * [groutine-两个协程交替打印123456](https://github.com/bw1032/gogogo/blob/main/interview/goroutine/ques1/main.go)
 
 ##### other
-* [常见panic](https://www.jianshu.com/p/b9a2c59b2dd3)
-* [常见加密解密](https://github.com/bw1032/gogogo/blob/main/interview/endecryption/reademe.md)
+* [panic](https://www.jianshu.com/p/b9a2c59b2dd3)
+* [endecryption](https://github.com/bw1032/gogogo/blob/main/interview/endecryption/reademe.md)
 * [redis](https://zhangc233.github.io/2021/05/02/Redis/)
 * [分布式缓存](https://zhangc233.github.io/2021/08/06/%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98/)
 

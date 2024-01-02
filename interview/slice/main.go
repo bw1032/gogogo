@@ -6,11 +6,68 @@ import (
 	"unsafe"
 )
 
+/*
+golang切片表达式, 一般形式是 a[low:high:max]，其中：
+
+	a 是一个切片。
+	low 是一个索引值，表示新切片的第一个元素在原切片中的位置。
+	high 是一个索引值，表示新切片的最后一个元素在原切片中的位置（但新切片不包含该元素）。
+	max 是一个可选的索引值，表示新切片的容量（即底层数组上的可用空间）
+
+append函数执行时会判断切片容量是否能够存放新增元素，如果不能，则会重新申请存储空间，
+新存储空间将是原来的2倍或1.25倍（取决于扩展原空间大小）
+，扩容实际上是重新分配一块更大的内存，将原slice数据拷贝进新slice，
+然后返回新slice，扩容后再将数据追加进去。
+*/
 func main() {
+
 	//for_append_()
 	//for_append_2()
 	//nil_empty_()
 	//pointer()
+	//array_slice_()
+	//append_()
+	//len_cap_()
+
+}
+
+func len_cap_() {
+	orderLen := 5
+	order := make([]uint16, 2*orderLen)
+
+	pollorder := order[:orderLen:orderLen]
+	lockorder := order[orderLen:][:orderLen:orderLen]
+
+	fmt.Println("len(pollorder) = ", len(pollorder)) //5
+	fmt.Println("cap(pollorder) = ", cap(pollorder)) //5
+	fmt.Println("len(lockorder) = ", len(lockorder)) //5
+	fmt.Println("cap(lockorder) = ", cap(lockorder)) //5
+}
+
+func append_() {
+	//程序输出什么结果
+	Append := func(slice []int, e int) []int {
+		return append(slice, e)
+	}
+
+	var a []int
+	a = append(a, 1)
+	a = append(a, 2)
+	a = append(a, 3)
+	fmt.Println(&a[0] == &Append(a, 4)[0]) //true
+
+	var b []int
+	b = append(b, 1, 2, 3)
+	fmt.Println(&b[0] == &Append(b, 4)[0]) //false
+}
+
+func array_slice_() {
+	//slice根据数组array创建，与数组共享存储空间
+	var array [10]int
+	var slice = array[5:6]
+	fmt.Println("lenth of slice: ", len(slice))    //1
+	fmt.Println("capacity of slice: ", cap(slice)) //5
+	fmt.Println(&slice[0] == &array[5])            //true
 }
 
 /**/
