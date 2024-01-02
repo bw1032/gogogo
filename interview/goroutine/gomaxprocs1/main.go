@@ -6,7 +6,7 @@ import (
 	"sync"
 )
 
-func H() {
+func main() {
 	run1()
 	//B: 9
 	//A: 10

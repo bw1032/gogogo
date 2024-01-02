@@ -20,10 +20,10 @@ communication operations.
 
 */
 
-func K() {
+func main() {
 
 	fmt.Println("====")
-	a := <- time.After(3 * time.Second)
+	a := <-time.After(3 * time.Second)
 	fmt.Println("====1")
 	fmt.Println(a)
 
@@ -37,8 +37,8 @@ func K() {
 	case v, k := <-chan2:
 		fmt.Println(k)
 		fmt.Println(v)
-	//default:
-	//	fmt.Println("end")
+		//default:
+		//	fmt.Println("end")
 	}
 
 }

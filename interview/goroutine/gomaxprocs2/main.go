@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func I() {
+func main() {
 
 	goroute(1)
 	// 单核 输出: 先出输出了等号 再输出了协程里的打印

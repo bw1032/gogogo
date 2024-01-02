@@ -19,7 +19,7 @@ import (
 //	lock     mutex
 //}
 
-func G() {
+func main() {
 	c1 := make(chan int)
 	var c2 chan int
 	fmt.Println(fmt.Sprintf("%T,%+v,%p", c1, c1, c1)) //chan int,0xc0001022a0,0xc0001022a0
@@ -31,7 +31,6 @@ func G() {
 	//写未初始化的chan:
 	c2 <- 1 //fatal error: all goroutines are asleep - deadlock! //goroutine 1 [chan send (nil chan)]:
 
-
 	close(c1)
 
 	//读已关闭的chan
@@ -40,7 +39,6 @@ func G() {
 	//如果 chan 关闭前，buffer 内有元素还未读 , 会正确读到 chan 内的值，且返回的第二个 bool 值（是否读成功）为 true
 	//如果 chan 关闭前，buffer 内有元素已经被读完，chan 内无值，接下来所有接收的值都会非阻塞直接成功，
 	//返回 channel 元素的零值， 但是第二个 bool 值一直为 false
-
 
 	//写已关闭的chan
 	c1 <- 1 //panic: send on closed channel //goroutine 1 [running]:

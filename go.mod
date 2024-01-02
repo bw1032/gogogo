@@ -12,8 +12,7 @@ go 1.12
 //why	    explain why packages or modules are needed(解释为什么需要依赖)
 
 require (
-	github.com/johnfercher/maroto v0.33.0
-	github.com/jung-kurt/gofpdf v1.16.2 // indirect
-	github.com/tiechui1994/gopdf v0.0.0-20210906105035-7cce3d921a5a
 	golang.org/x/exp v0.0.0-20211214223157-bafe2e20209a
+	gorm.io/driver/mysql v1.5.2
+	gorm.io/gorm v1.25.5
 )
