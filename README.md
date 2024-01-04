@@ -10,13 +10,13 @@
 * [slice](https://github.com/bw1032/gogogo/blob/main/interview/slice/main.go)
 
 ##### defer
-* [defer](https://github.com/bw1032/gogo/gogogo/main/interview/defer/main.go)
+* [defer](https://github.com/bw1032/gogogo/main/interview/defer/main.go)
 
 ##### algorithm
-* [bubble](https://github.com/bw1032/gogo/gogogo/main/interview/algorithm/bubblesort/main.go)
+* [bubble](https://github.com/bw1032/gogogo/main/interview/algorithm/bubblesort/main.go)
 
 ##### 字符串
-* [字符串编码](https://github.com/bw1032/gogo/gogogo/main/interview/string/code/main.go)
+* [字符串编码](https://github.com/bw1032/gogogo/main/interview/string/code/main.go)
 * [中文字符串下标取值](https://github.com/bw1032/gogogo/blob/main/interview/string/subscript/main.go)
 * [翻转字符串"你abc好"](https://github.com/bw1032/gogogo/blob/main/interview/string/reverse/main.go)
 
@@ -27,7 +27,7 @@
 * [struct compare](https://github.com/bw1032/gogogo/blob/main/interview/struct/main.go)
 
 ##### mysql
-* [max-conn](https://github.com/bw1032/gogo/gogogo/main/interview/mysql/max-conn/main.go)
+* [max-conn](https://github.com/bw1032/gogogo/main/interview/mysql/max-conn/main.go)
 
 ##### channel & groutine 
 
