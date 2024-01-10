@@ -54,3 +54,10 @@ func main() {
 	}
 	wg.Wait()
 }
+
+func main2() {
+	f, err := os.OpenFile("./toline.trace", os.O_CREATE|os.O_RDWR, 06666)
+	err = trace.Start(f)
+	defer trace.Stop()
+	fmt.Println(err)
+}

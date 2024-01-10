@@ -1,0 +1,44 @@
+version: "3.0"
+
+networks:
+  redis-sentinel-1:
+    driver: bridge
+
+services:
+  r-m:
+    image: redis:6.2.7
+    container_name: r-m
+    ports:
+      - 6379:6379
+    volumes:
+      - /rds/master.conf:/etc/redis/redis.conf
+      - /rds/master-data:/data
+    command: bash -c "redis-server /etc/redis/redis.conf"
+    networks:
+      - redis-sentinel-1
+  r-s1:
+    image: redis:6.2.7
+    container_name: r-s1
+    ports:
+      - 6380:6380
+    volumes:
+      - /rds/slave1.conf:/etc/redis/redis.conf
+      - /rds/slave1-data:/data
+    command: bash -c "redis-server /etc/redis/redis.conf  --slaveof 192.168.1.21 6379"
+    depends_on:
+      - r-m
+    networks:
+      - redis-sentinel-1
+  r-s2:
+    image: redis:6.2.7
+    container_name: r-s2
+    ports:
+      - 6381:6381
+    volumes:
+      - /rds/slave2.conf:/etc/redis/redis.conf
+      - /rds/slave2-data:/data
+    command: bash -c "redis-server /etc/redis/redis.conf  --slaveof 192.168.1.21 6379"
+    depends_on:
+      - r-m
+    networks:
+      - redis-sentinel-1
